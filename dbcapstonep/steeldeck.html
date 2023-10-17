@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="js/sidebar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/steeldeck.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <aside id="sidebar">
+          <div class="h-100">
+            <div class="sidebar-logo">
+              <a href="#">Stocks Inventory System</a>
+            </div>
+            <ul class="sidebar-nav">
+              <li class="sidebar-item">
+                <a href="dashboard.html" class="sidebar-link  py-3">
+                  <i class="bi bi-speedometer2 pe-2"></i>
+                  Dashboard
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="user.html" class="sidebar-link  py-3">
+                  <i class="bi bi-people pe-2"></i>
+                  Users
+                </a>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed py-3" data-bs-target="#inventory" data-bs-toggle="collapse" aria-expanded="false">
+                  <i class="bi bi-box2 pe-2"></i>
+                Raw Materials
+              </a>
+              <ul id="inventory" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="sidebar">
+                <li class="sidebar-item">
+                  <a href="cpurlins.html" class="sidebar-link  py-3">C-Purlins</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="coloredcoils.html" class="sidebar-link  py-3">Colored Coils</a>
+                </li>
+                <li class="sidebar-item">
+                  <a href="steeldeck.html" class="sidebar-link  py-3">Steel Deck</a>
+                </li>
+              </ul>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link collapsed py-3" data-bs-target="#archive" data-bs-toggle="collapse" aria-expanded="false">
+                  <i class="bi bi-archive pe-2"></i>
+                  Archive
+                </a>
+                <ul id="archive" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="sidebar">
+                  <li class="sidebar-item">
+                    <a href="employeearchive.html" class="sidebar-link py-3">Employee</a>
+                  </li>
+                  <li class="sidebar-item">
+                    <a href="materialarchive.html" class="sidebar-link py-3">Materials</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="sidebar-item">
+                <a href="admin_login.html" class="sidebar-link  py-3">
+                  <i class="bi bi-box-arrow-right pe-2"></i>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+      </aside>
+    
+      <div class="main">
+        <nav class="navbar navbar-expand px-3 p-0 border-bottom shadow">
+            <button class="btn" id="sidebar-toggle" type="button">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse navbar">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                    <img src="images/img_avatar.png" class="avatar img-fluid rounded-circle" alt="avatar">
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <a href="#" class="dropdown-item">Profile</a>
+                    <a href="#" class="dropdown-item">Setting</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <main class="content px-3 py-2">
+          <div class="container-fluid">
+            <div class="mt-3">
+              <h3>Hello, Admin</h3>
+              <div class="mt-3 add-button">
+                <button class="btn btn-primary">Add Material</button>
+            </div>
+            </div>
+            <div class="mt-4">
+              <div class="card boarder-0">
+                <div class="card-header">
+                  <h5 class="card-title">
+                    Data table
+                  </h5>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table align-middle">
+                      <thead>
+                        <tr>
+                          <th>Width</th>
+                          <th>Thickness</th>
+                          <th>Roll(KGS)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>2x3</td>
+                          <td>0.10mm</td>
+                          <td>450KGs</td>
+                        </tr>
+                        <tr>
+                          <td>2x3</td>
+                          <td>0.70mm</td>
+                          <td>560KGS</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
